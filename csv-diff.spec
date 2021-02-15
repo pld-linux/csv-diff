@@ -1,0 +1,41 @@
+Summary:	Python CLI tool and library for diffing CSV files
+Name:		csv-diff
+Version:	1.0
+Release:	1
+License:	Apache v2.0
+Group:		Applications
+#Source0Download: https://pypi.org/simple/csv-diff/
+Source0:	https://files.pythonhosted.org/packages/source/c/csv-diff/%{name}-%{version}.tar.gz
+# Source0-md5:	26a5482936829d2ebe7894170b2c389c
+URL:		https://github.com/simonw/csv-diff
+BuildRequires:	python3-modules >= 1:3.6
+BuildRequires:	python3-setuptools
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.714
+Requires:	python3-modules >= 1:3.6
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+Tool for viewing the difference between two CSV files.
+
+%prep
+%setup -q
+
+%build
+%py3_build
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%py3_install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc README.md
+%attr(755,root,root) %{_bindir}/csv-diff
+%{py3_sitescriptdir}/csv_diff
+%{py3_sitescriptdir}/csv_diff-%{version}-py*.egg-info
