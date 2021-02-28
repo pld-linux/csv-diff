@@ -9,6 +9,7 @@ Source0:	https://files.pythonhosted.org/packages/source/c/csv-diff/%{name}-%{ver
 # Source0-md5:	2c9cf505b45db4cb3c586c84cfef6f2e
 URL:		https://github.com/simonw/csv-diff
 BuildRequires:	python3-modules >= 1:3.6
+BuildRequires:	python3-pytest-runner
 BuildRequires:	python3-setuptools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
