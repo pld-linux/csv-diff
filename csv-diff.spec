@@ -1,7 +1,7 @@
 Summary:	Python CLI tool and library for diffing CSV files
 Name:		csv-diff
 Version:	1.1
-Release:	5
+Release:	6
 License:	Apache v2.0
 Group:		Applications
 #Source0Download: https://pypi.org/simple/csv-diff/
